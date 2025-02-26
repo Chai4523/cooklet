@@ -1,40 +1,45 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import * as api from "./APIUtils";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button
-          onClick={() => {
-            setCount((count) => count + 1);
-            api.searchRecipe();
-          }}
-        >
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <h1>Recipe Search</h1>
+      <h2>Search Recipes from all over the world</h2>
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        }}
+      >
+        <input type="text" placeholder="What would you like to cook?" />
+
+        <div>
+          <label>Diet</label>
+          <select>
+            {[
+              "none",
+              "pescetarian",
+              "lacto vegetarian",
+              "ovo vegetarian",
+              "vegan",
+              "vegetarian",
+            ].map((diet) => {
+              return <option value={diet}>{diet}</option>;
+            })}
+          </select>
+        </div>
+
+        <div>
+          <label>Exclude Ingredients</label>
+          <input type="text" placeholder="Allergic to something? Type here"/>
+        </div>
+
+        <button type="submit">Search</button>
+      </form>
+    </div>
   );
 }
 
