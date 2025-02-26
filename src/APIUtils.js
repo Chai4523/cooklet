@@ -1,8 +1,10 @@
 import { initializeApp } from "firebase/app";
 
-const apiKey = import.meta.env.VITE_SPOONACULAR_API_KEY;
+const SPOONACULAR_API_KEY = import.meta.env.VITE_SPOONACULAR_API_KEY;
+const FIREBASE_API_KEY = import.meta.env.VITE_FIREBASE_API_KEY;
+
 const firebaseConfig = {
-  apiKey: "***REMOVED***",
+  apiKey: FIREBASE_API_KEY,
   authDomain: "recipe-app-63bae.firebaseapp.com",
   projectId: "recipe-app-63bae",
   storageBucket: "recipe-app-63bae.firebasestorage.app",
