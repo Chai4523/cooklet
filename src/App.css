@@ -1,42 +1,121 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.title {
+  display: flex;
+  justify-content: center;
+  color: var(--active);
+
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+  margin-top: 5rem;
+  margin-bottom: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.subtitle {
+  display: flex;
+  justify-content: center;
+  color: var(--primary);
+
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 300;
+  margin-top: 1.25rem;
+  margin-bottom: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 56rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.input-box {
+  display: flex;
+
+  color: black;
+  background-color: var(--primary);
+
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
 }
 
-.card {
-  padding: 2em;
+.input-box::placeholder {
+  color: rgb(180, 180, 180);
 }
 
-.read-the-docs {
-  color: #888;
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  margin-top: 1.25rem;
+  column-gap: 2.5rem;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+input,
+select {
+  border: 2px solid transparent;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid var(--active);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.mw-one-third {
+  max-width: 33%;
+}
+
+.btn-search {
+  color: var(--primary);
+  background-color: var(--active);
+  border-radius: 0.5rem;
+  border: 0 solid;
+
+  padding: 0.75rem 2.5rem;
+  margin-top: 1.25rem;
+
+  transition-duration: 0.3s;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-search:hover {
+  color: var(--active);
+  background-color: var(--primary);
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
 }
