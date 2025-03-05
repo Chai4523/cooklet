@@ -15,24 +15,42 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export function searchRecipe(query = "pasta", number = 10) {
-  const url = new URL("https://api.spoonacular.com/recipes/complexSearch");
+export async function searchRecipe(query) {
+  const url = new URL("https://api.spoonacular.com/recipes/search");
+  const options = {
+    method: "GET",
+    headers: {
+      "x-api-key": SPOONACULAR_API_KEY,
+    },
+  };
   const queryParams = {
-    apiKey: apiKey,
-    query: query,
-    number: number,
+    query: query.keyword,
+    diet: query.diet,
+    excludeIngredients: query.exclude,
+    number: 20,
+    offset: 0,
   };
 
   url.search = new URLSearchParams(queryParams).toString();
 
-  fetch(url)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      return data;
-    })
-    .catch((err) => {
-      console.log("searchRecipe error:", err);
-    });
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      throw new Error("Network response was not ok.");
+    }
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.log("searchRecipe error:", err);
+  }
+}
+
+export function getRecipeById(id) {
+  const url = new URL("https://api.spoonacular.com/recipes");
+  const options = {
+    method: "GET",
+    headers: {
+      "x-api-key": SPOONACULAR_API_KEY,
+    },
+  };
 }
