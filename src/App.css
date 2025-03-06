@@ -52,13 +52,13 @@
   flex-direction: column;
 }
 
-.flex-row {
+.sm-flex-col {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
 
   margin-top: 1.25rem;
-  column-gap: 2.5rem;
+  row-gap: 1.25rem;
 }
 
 .flex-center {
@@ -115,10 +115,6 @@ input:focus {
   width: 100%;
 }
 
-.mw-one-third {
-  max-width: 33%;
-}
-
 .btn-search {
   color: var(--primary);
   background-color: var(--active);
@@ -141,9 +137,7 @@ input:focus {
 
 .recipe-card-list {
   display: grid;
-  /* repeat(1,minmax(0,1fr)) for mobile view */
-  /* repeat(3,minmax(0,1fr)) for larger view */
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 2rem;
 }
 
@@ -187,4 +181,29 @@ input:focus {
 
 .mt-10 {
   margin-top: 2.5rem;
+}
+
+/* Medium View */
+@media (width > 640px) {
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 2.5rem;
+  }
+
+  .recipe-card-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mw-one-third {
+    max-width: 33%;
+  }
+}
+
+/* Large View */
+@media (width > 1024px) {
+  .recipe-card-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }

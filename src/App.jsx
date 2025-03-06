@@ -51,10 +51,11 @@ function App() {
             setKeyword(e.target.value);
             setResponse(null);
           }}
+          required
         />
 
-        <div className="flex-row">
-          <div className="flex-col flex-grow mw-one-third">
+        <div className="sm-flex-col flex-row">
+          <div className="flex-col flex-grow mw-one-third w-full">
             <label>Diet</label>
             <select
               className="input-box text-base semibold mt-1"
@@ -76,12 +77,12 @@ function App() {
             </select>
           </div>
 
-          <div className="flex-col flex-grow mw-one-third">
+          <div className="flex-col flex-grow mw-one-third w-full">
             <label>Exclude Ingredients</label>
             <input
               className="input-box text-base semibold mt-1"
               type="text"
-              placeholder="Allergic to something? Type here"
+              placeholder="nuts"
               onChange={(e) => {
                 setExclude(e.target.value);
               }}
