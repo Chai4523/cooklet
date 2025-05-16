@@ -28,6 +28,6 @@ pnpm run dev
 
 ## 🤝 Acknowledgements
 
-<img height="50px" src="./public/spoonacular.png">
+<img height="100px" src="./public/spoonacular.png">
 
 This project uses the Spoonacular API but is not endorsed or certified by Spoonacular.
