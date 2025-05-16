@@ -1,8 +1,33 @@
-# React + Vite
+<h1 align="center">🍜 Cooklet</h1>
+<br>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A simple recipe browsing app built with [React](https://react.dev/), using [Spoonacular API](https://spoonacular.com/food-api).
 
-Currently, two official plugins are available:
+Live Demo: [cooklet.vercel.app](cooklet.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Screenshots
+
+![screenshot](./public/cooklet.png)
+
+## 🛠️ Setup
+
+```bash
+# Clone the project to your machine
+git clone https://github.com/Chai4523/cooklet.git
+cd cooklet
+
+# This project uses pnpm as package manager, install if you dont have it
+npm install -g pnpm
+
+# Install dependencies
+pnpm install
+
+# Run the development server
+pnpm run dev
+```
+
+## 🤝 Acknowledgements
+
+<img height="50px" src="./public/spoonacular.png">
+
+This project uses the Spoonacular API but is not endorsed or certified by Spoonacular.
